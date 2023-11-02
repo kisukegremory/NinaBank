@@ -20,7 +20,7 @@ inspired by the devgym challenge: https://app.devgym.com.br/challenges/9af13172-
 # Todo
 
 ## Backend Service
-- [ ] Fazer endpoints sem lógica interna (com versionamento incluso)
+- [X] Fazer endpoints sem lógica interna (com versionamento incluso)
 - [ ] Implementar Docker do mysql & Kafka
 - [ ] Implementar o account create (REST)
     - [ ] modelo AccountUser
