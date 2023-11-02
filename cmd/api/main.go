@@ -1,6 +1,39 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"context"
+	"database/sql"
+	"log/slog"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/kisukegremory/ninabank/internal/db"
+)
+
+func init() {
+	ctx := context.Background()
+	dbcon, err := sql.Open("mysql", "example_user:password@tcp(localhost:3306)/production")
+	if err != nil {
+		panic(err.Error())
+	}
+	queries := db.New(dbcon)
+	defer dbcon.Close()
+
+	result, err := queries.CreateAccount(ctx, db.CreateAccountParams{
+		Name:     "Gustavo de Souza",
+		Email:    "nina@gmail.com",
+		Username: "nina.gustavo",
+		Password: "123456",
+	})
+
+	if err != nil {
+		panic(err)
+	}
+	lastId, _ := result.LastInsertId()
+
+	slog.Info("Last inserted User %s", lastId)
+
+}
 
 func main() {
 	router := gin.Default()

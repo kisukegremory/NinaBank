@@ -21,7 +21,7 @@ inspired by the devgym challenge: https://app.devgym.com.br/challenges/9af13172-
 
 ## Backend Service
 - [X] Fazer endpoints sem lógica interna (com versionamento incluso)
-- [ ] Implementar Docker do mysql & Kafka
+- [X] Implementar Docker do mysql & Kafka
 - [ ] Implementar o account create (REST)
     - [ ] modelo AccountUser
     - [ ] criptografar os dados sensíveis (salt and pepper)
@@ -31,6 +31,7 @@ inspired by the devgym challenge: https://app.devgym.com.br/challenges/9af13172-
     - [ ] Endpoint
     - [ ] Mensagens de erro
 - [ ] Adicionar Autenticação nos endpoints
+- [X] Implementar Docker Kafka
 - [ ] Implementar o cash withdrawal
     - [ ] model BankingOperations
     - [ ] model AccountBalance
